@@ -1,0 +1,24 @@
+using System;
+class Program
+{
+    static bool IsPrime(int num)
+    {
+        for (int i = 2; i <= Math.Sqrt(num); i++)
+        {
+            if (num % i == 0) return false;
+        }
+        return num > 1;
+    }
+
+    static void Main()
+    {
+        Console.Write("Enter range (start end): ");
+        var range = Console.ReadLine().Split();
+        int start = int.Parse(range[0]), end = int.Parse(range[1]);
+
+        for (int i = start; i <= end; i++)
+        {
+            if (IsPrime(i)) Console.Write(i + " ");
+        }
+    }
+}
